@@ -9,20 +9,22 @@ html, body{
 #header, #footer{
 	min-height: 1.5em;
 	height: 1.5em;
-	width: 100%;
+	width: calc(100% - 2em);
 	padding-top: .5em;
+	padding-left: 2em;
 	margin: 0px;
-	margin-bottom: .5em;
-	margin-top: .5em;
+	/*margin-bottom: .5em;*/
+	/*margin-top: .5em;*/
+	background-color: #52AD9C;
 }
 
 #footer {
-	padding-bottom: 1em;
+	/*padding-bottom: 1em;*/
 }
 
 #center-wrapper {
 	width: 100%;
-	height: calc(100% - 5em);
+	height: calc(100% - 4em);
 }
 
 #center {
@@ -41,15 +43,15 @@ html, body{
 }
 
 #map-wrapper {
-	width: calc(80% - 2em);
-	padding: 1em;
+	width: 80%;
+	/*padding: 1em;*/
 	margin: 0%;
-	height: calc(100% - 2em);
+	height: 100%;
 	display: inline-block;
 }
 
 #map{
-	height: calc(100% - 4em);
+	height: 100%;
 	width: 100%;
 	display:inline-block;
 }

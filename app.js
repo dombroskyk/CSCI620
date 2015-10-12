@@ -28,6 +28,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
+    console.log(err.message);
     res.render('error', {
       message: err.message,
       error: err
@@ -47,15 +48,3 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-
-
-/*app.get('/', function(req, res) {
-	res.send('Hello World!');
-});
-
-var server = app.listen(3000, function(){
-	var host = server.address().address,
-		port = server.address().port;
-		
-	console.log('Example app listening at http://localhost:%s', host, port);
-});*/
