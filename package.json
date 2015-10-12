@@ -1,0 +1,15 @@
+{
+	"name": "Group_6_Plant_Locator",
+	"version": "1.0.0",
+	"description": "Plants location database",
+	"private": true,
+	"devDependencies": {
+    	"nodemon": "^1.3.7"
+	},
+	"dependencies": {
+		"express": "~4.12.2",
+		"debug": "~2.1.1",
+		"mysql": "^2.5.4",
+    	"jade": "~1.9.2"
+	}
+}
