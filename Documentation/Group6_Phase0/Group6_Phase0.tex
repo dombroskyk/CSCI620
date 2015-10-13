@@ -1,0 +1,154 @@
+% This is "sig-alternate.tex" V1.9 April 2009
+% This file should be compiled with V2.4 of "sig-alternate.cls" April 2009
+%
+% This example file demonstrates the use of the 'sig-alternate.cls'
+% V2.4 LaTeX2e document class file. It is for those submitting
+% articles to ACM Conference Proceedings WHO DO NOT WISH TO
+% STRICTLY ADHERE TO THE SIGS (PUBS-BOARD-ENDORSED) STYLE.
+% The 'sig-alternate.cls' file will produce a similar-looking,
+% albeit, 'tighter' paper resulting in, invariably, fewer pages.
+%
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V2.4) produces:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) NO page numbers
+%
+% as against the acm_proc_article-sp.cls file which
+% DOES NOT produce 1) thru' 3) above.
+%
+% Using 'sig-alternate.cls' you have control, however, from within
+% the source .tex file, over both the CopyrightYear
+% (defaulted to 200X) and the ACM Copyright Data
+% (defaulted to X-XXXXX-XX-X/XX/XX).
+% e.g.
+% \CopyrightYear{2007} will cause 2007 to appear in the copyright line.
+% \crdata{0-12345-67-8/90/12} will cause 0-12345-67-8/90/12 to appear in the copyright line.
+%
+% ---------------------------------------------------------------------------------------------------------------
+% This .tex source is an example which *does* use
+% the .bib file (from which the .bbl file % is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission, you *NEED* to 'insert'
+% your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% ================= IF YOU HAVE QUESTIONS =======================
+% Questions regarding the SIGS styles, SIGS policies and
+% procedures, Conferences etc. should be sent to
+% Adrienne Griscti (griscti@acm.org)
+%
+% Technical questions _only_ to
+% Gerald Murray (murray@hq.acm.org)
+% ===============================================================
+%
+% For tracking purposes - this is V1.9 - April 2009
+
+\documentclass{Group6_Phase0}
+
+\begin{document}
+%
+% --- Author Metadata here ---
+%\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+% --- End of Author Metadata ---
+
+\title{Group 6 - Phase 0}
+%\subtitle{[Extended Abstract]}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{2} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+%	1st. author
+	\alignauthor
+		Kevin Dombrosky\\
+		       \affaddr{Rochester Institute of Technology Student}\\
+		       \affaddr{610 Park Point Dr}\\
+		       \affaddr{Rochester, New York 14623}\\
+		       \email{kfd6490@rit.edu}
+%	2nd. author
+	\alignauthor
+		Brittany Purcell\\
+		       \affaddr{Rochester Institute of Technology Student}\\
+		       \affaddr{107 Weldon Street}\\
+		       \affaddr{Rochester, New York 14611}\\
+		       \email{blp6903@rit.edu}
+}
+
+\maketitle
+\begin{abstract}
+This paper discusses the outline of the group project for Group 6 in the Intro to Big Data class at Rochester Institute of Technology, CSCI-620. The project requires use of a database management component and a database analytics component. The paper further breaks down the dataset, database management system, and application that will be used for the project's completion.
+\end{abstract}
+
+\keywords{Phase 0, Group 6, Plants}
+
+\section{Introduction}
+The group project for CSCI-620, Intro to Big Data at Rochester Institute of Technology, requires students to explore storage and analytics with a large data set.
+
+There are two requirements for this project. First, it must include a database management system (DBMS) that is preferred to be relational in nature. This includes data modeling and Entity-Relationship Diagrams, SQL programming, and relational design practices including indexing and constraints within the DBMS. Second, some form of database analytics. This can include a visualization of the data, or showing use of a data mining technique, including classification, clustering, and association.
+
+These requirements are planned to be accomplished by Group 6 by creating an application that shows the geographical location of various types of plants in the United States and Canada using the Plants dataset from the UCI Machine Learning Repository. The database system is intended to be the relational database, MySQL. The analytics component is intended to be a visualization of what states and provinces have each plant within them.\\\\\\\\
+
+\section{Body}
+
+\subsection{Dataset}
+The dataset that is to be used by the application is the Plants dataset from the UCI Machine Learning Repository (http://archive.ics.uci.edu/ml/datasets/Plants). It includes over 22,000 records of scientific names of plants and a comma separated list of state abbreviations of what states the plant can be found in. To make the data easier to ingest and comprehend, a file was included for converting the abbreviations for states and provinces.
+
+The already present structure in the dataset should cause for relatively easy data ingestion. The group may need to express caution when character encodings are considered, since several special characters appear present in the data set. Ingestion will likely be carried out by a script outputting the SQL statement to insert the records into the database.
+
+\subsection{Database Management System}
+The database management system that the team intends to use to store the Plants dataset is the MySQL DBMS. MySQL presents itself as the most viable option for the team. The barrier of cost is the largest consideration for the team, and MySQL being free makes it very appealing among other systems. From the subset of databases remaining in consideration, the team has the most experience with MySQL, so the team wants to complete the project using MySQL as their relational database management system.
+
+Another database system that was considered for the project was PostgreSQL. While PostgreSQL offers great customization, it is heavier duty than what is required and the team collectively has less experience working with PostgreSQL.
+
+\subsection{Application}
+The application design being considered by the team is simple, but also still in a relatively conceptual stage.
+
+The application will primarily feature a search box and a map of Canada and the United States. The search box will be expected to allow for searching of whole strings of a plant's scientific name. If a whole string is input, the map should be highlighted as to what locations the plant can be found in.
+
+There are additional features planned for the application, time permitting. One of these features are for the search box to allow for partial string searching of plants scientific names. Doing so would bring up a listing of plant names that the user can the select from to highlight on the map. Another feature that is desired is to incorporate common names of plants to be able to be searched. However, the common names of plants is not included with the data set, so this will likely require manual data collection and input to the DBMS, or reaching out to another dataset. Another feature that was brainstormed by the team is to allow for the user to click on a state or province region to bring up a list of plants that are located in that region.
+
+These additional features are desired in the end product and will be pursued. The barrier that the team is concerned about limiting their time for the project is simply inexperience with certain technologies. The team hasn't worked with any packages to allow for visualization before. This may be able to be circumvented by instead creating a web application.
+
+\section{Conclusions}
+The team plans to design and implement an application that uses the Plants dataset from the UCI Machine Learning Repository. This application will use a MySQL relational database management system to store the data. The team has high hopes for the features of the application, time permitting, and are looking forward to the challenge of learning new technologies regarding visualization.
+
+\end{document}  % This is where a 'short' article might terminate
