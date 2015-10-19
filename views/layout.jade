@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		title
+			| Plant Finder
+		link(href='/css/project.css', rel='stylesheet')
+		block css
+		
+		block scripts
+		
+	body
+		div(id="header")
+			a(href="/") Plant Finder
+			|  | 
+			a(href="/about") About
+			
+		div(id="center-wrapper")
+			div(id="center")
+				block content
+			
+		div(id="footer")
+			| Authors - Brittany Purcell & Kevin Dombrosky
