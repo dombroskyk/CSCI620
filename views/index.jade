@@ -5,11 +5,26 @@ block css
 	
 block scripts
 	script(src="http://js.arcgis.com/3.14/")
-	script(src='/js/arcMap.js')
+	if plant_name
+		script(src='/js/arcMap.js')
+	else if state
+		script(src='/js/arcMap.js')
+	else
+		script(src='/js/arcMap.js')
 
 block content
-		div(id="sidebar")
-			form(id='searchContainer', action='/plants', method='get')
-				input(type='text', id='search', name='plantName', placeholder='Search for a plant...')
-		div(id="map-wrapper")
-			div(id="map")
+	div(id="sidebar")
+		form(id='searchContainer', action='', method='get')
+			if plant_name
+				input(type='text', id='search', name='plantSearch', placeholder=plant_name)
+			else
+				input(type='text', id='search', name='plantSearch', placeholder='Search for a plant...')
+		
+		if plant_name
+			| #{locals.plant_name}
+		else if state
+			| #{locals.state}
+		else
+			| "Nothing received..."
+	div(id="map-wrapper")
+		div(id="map")

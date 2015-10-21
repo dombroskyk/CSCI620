@@ -3,6 +3,7 @@
 var https = require('https'),
     mysql = require('mysql'),
     config = require('../config');
+    //abbrMap = require('../includes/abbrMap');
 
 module.exports = {
 
@@ -37,20 +38,22 @@ module.exports = {
             /*mysql_connection.query('SELECT plant_name FROM plant WHERE plant.plant_name like \'%?%\'', [plant_name], function(err, results){
                 
             });*/
+            //there needs to be a better way to do this
+            res.render('index', {plant_name: plant_name, state: ''});
         }else if( state ){
             //query state name
             /*mysql_connection.query('SELECT plant_name FROM plant as p, location as l WHERE p.plantID = (SELECT locationID FROM location WHERE location.name like ?)', [state], function(err, results){
                 
             });*/
+            res.render('index', {plant_name: '', state: state});
         }else{
             /*mysql_connection.query('SELECT plant_name FROM plant', function(err, rows, fields){
                if( err ) throw err; //should find more elegant way to handle these
                
                console.log( 'query successful' );
-               
             });*/
+            res.render('index', {plant_name: '', state: ''});
         }
-        res.render('index', {plant_name: plant_name, state: state});
     },
 
     about: function (req, res) {
