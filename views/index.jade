@@ -74,13 +74,19 @@ block scripts
 block content
 	div(id='sidebar')
 		if plant_name
-			div(class="successSearch") #{locals.plant_name}
+			if plant_names.length
+				div(class="successSearch") #{locals.plant_name}
+			else
+				div(class="failSearch") No results for: #{locals.plant_name}
 		else if state
-			div(class="successSearch") #{locals.state}
+			if plant_names.length
+				div(class="successSearch") #{locals.state}
+			else
+				div(class="failSearch") No results for: #{locals.state}
 		else if initial
 			div(class="successSearch") Welcome! Enter search term here.
 		else
-			div(class="failSearch") Placeholder No Result Text
+			div(class="failSearch") Something went wrong...
 			
 		form(id='searchContainer', action='', method='get')
 			if plant_name
