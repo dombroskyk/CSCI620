@@ -1,4 +1,4 @@
-html, body{
+html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0px;
@@ -6,20 +6,26 @@ html, body{
 	font-family: Arial, Verdana;
 }
 
-#header, #footer{
+#header, #footer {
 	min-height: 1.5em;
 	height: 1.5em;
 	width: calc(100% - 2em);
 	padding-top: .5em;
 	padding-left: 2em;
 	margin: 0px;
-	/*margin-bottom: .5em;*/
-	/*margin-top: .5em;*/
 	background-color: #52AD9C;
 }
 
-#footer {
-	/*padding-bottom: 1em;*/
+#header {
+	font-weight: bold;
+}
+
+#home-link {
+	display: inline-block;
+}
+
+#home-link a {
+	color: #000000;
 }
 
 #center-wrapper {
@@ -33,18 +39,73 @@ html, body{
 }
 
 #sidebar {
-	width: calc(20% - 2em);
-	height: calc(100% - 2em);
-	padding: 1em;
+	width: calc(20% - 1em);
+	height: calc(100% - 1em);
+	padding: 1em 0em 0em 1em;
 	margin: 0px;
 	display: inline-block;
 	float: left;
-	/*box-shadow: 5px 0px 5px grey;*/
+}
+
+.successSearch, .failSearch {
+	width: calc(100% - 2em);
+	padding: .2em;
+	height: 1em;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 5px;
+}
+
+.successSearch {
+	border-color: #006600;
+	background-color: #90EE90;
+	color: #006600;
+}
+
+.failSearch {
+	border-color: #CC3333;
+	background-color: #FF99CC;
+	color: #CC3333;
+}
+
+#search {
+	height: 1.2em;
+	width: calc(100% - 2em);
+	/*border-radius: 5px;*/
+}
+	
+#sidebar ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#sidebar ul li {
+	padding: .5em;
+}
+
+#sidebar ul a {
+	color: #000000;
+	background-color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#sidebar ul li:hover {
+	background-color: #D0D0D0;
+}
+
+#plantsList {
+	height: calc(100% - 2.6em - 17px);
+	overflow-y: auto;
+}
+
+#searchContainer {
+	margin: 5px 0px;
 }
 
 #map-wrapper {
 	width: 80%;
-	/*padding: 1em;*/
 	margin: 0%;
 	height: 100%;
 	display: inline-block;

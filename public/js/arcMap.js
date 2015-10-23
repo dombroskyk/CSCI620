@@ -13,11 +13,6 @@ require([
 			slider: true
 		});
 	map.on("load", addFeatureLayer);
-	map.graphics.on("click", myGraphicsClickHandler);
-
-	function myGraphicsClickHandler(evt) {
-		alert("User clicked on " + evt.graphic);
-	}
 
 	function addFeatureLayer() {
 		//set the symbol to be an outline of the shape filled with a color
@@ -50,9 +45,11 @@ require([
 		var canadaFeatureLayer = new FeatureLayer("https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/mapoverlays_political/MapServer/4");
 		//print names to the browser console when we click on the region
 		canadaFeatureLayer.on('click', function(e){
+			window.location.href = 'http://localhost:3000/?stateSearch='+e.graphic.attributes.NAME;
 			console.log(e.graphic.attributes.NAME);
 		});
 		featureLayer.on('click', function(e){
+			window.location.href = 'http://localhost:3000/?stateSearch='+e.graphic.attributes.STATE_NAME;
 			console.log(e.graphic.attributes.STATE_NAME);
 		});
 		

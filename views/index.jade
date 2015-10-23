@@ -5,26 +5,96 @@ block css
 	
 block scripts
 	script(src="http://js.arcgis.com/3.14/")
-	if plant_name
-		script(src='/js/arcMap.js')
-	else if state
-		script(src='/js/arcMap.js')
-	else
-		script(src='/js/arcMap.js')
+	script.
+		//start ArcGIS code 
+		var map;
+		require([
+			"esri/map", "esri/layers/FeatureLayer", "esri/InfoTemplate",
+			"esri/symbols/SimpleLineSymbol", "esri/symbols/SimpleFillSymbol",
+			"esri/renderers/UniqueValueRenderer", "esri/Color",
+			"dojo/domReady!"],
+			function(Map, FeatureLayer, InfoTemplate, SimpleLineSymbol, SimpleFillSymbol, UniqueValueRenderer, Color) {
+				map = new Map("map", {
+					basemap: "gray",
+					center: [-100, 45],
+					zoom: 4,
+					slider: true
+				});
+			map.on("load", addFeatureLayer);
+		
+			function addFeatureLayer() {
+				//set the symbol to be an outline of the shape filled with a color
+				var default_symbol = new SimpleFillSymbol().setStyle(SimpleFillSymbol.STYLE_NULL);
+				default_symbol.outline.setStyle(SimpleLineSymbol.STYLE_NULL);
+		
+				//create renderer
+				var usa_renderer = new UniqueValueRenderer(default_symbol, "STATE_NAME"),
+					can_renderer = new UniqueValueRenderer(default_symbol, "NAME"),
+					usa_active = '#{locals.usa_active}'.split(','),
+					can_active = '#{locals.can_active}'.split(','),
+					usa_inactive = '#{locals.usa_inactive}'.split(','),
+					can_inactive = '#{locals.can_inactive}'.split(',');
+		
+				//add symbol for each possible value 
+				//assign colors for active usa shapes
+				for( i = 0; i < usa_active.length; i++ ){
+					usa_renderer.addValue(usa_active[i], new SimpleFillSymbol().setColor(new Color([0, 255, 0, 0.5])));
+				}
+				//assign colors for active canada shapes
+				for( i = 0; i < can_active.length; i++ ){
+					can_renderer.addValue(can_active[i], new SimpleFillSymbol().setColor(new Color([0, 255, 0, 0.5])));
+				}
+				//assign colors for inactive usa shapes
+				for( i = 0; i < usa_inactive.length; i++ ){
+					usa_renderer.addValue(usa_inactive[i], new SimpleFillSymbol().setColor(new Color([255, 255, 255, 0.5])));
+				}
+				//assign colors for inactive canada shapes
+				for( i = 0; i < usa_inactive.length; i++ ){
+					can_renderer.addValue(can_inactive[i], new SimpleFillSymbol().setColor(new Color([255, 255, 255, 0.5])));
+				}
+				
+				
+				var usa_feature_layer = new FeatureLayer("http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StateCityHighway_USA/MapServer/1");
+				var can_feature_layer = new FeatureLayer("https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/mapoverlays_political/MapServer/4");
+				//print names to the browser console when we click on the region
+				can_feature_layer.on('click', function(e){
+					window.location.href = '/?stateSearch=' + e.graphic.attributes.NAME;
+				});
+				usa_feature_layer.on('click', function(e){
+					window.location.href = '/?stateSearch=' + e.graphic.attributes.STATE_NAME;
+				});
+				
+				//add renderers of the shapes to the map object
+				usa_feature_layer.setRenderer(usa_renderer);
+				can_feature_layer.setRenderer(can_renderer);
+				map.addLayers([can_feature_layer,usa_feature_layer]);
+			}
+		});
 
 block content
-	div(id="sidebar")
+	div(id='sidebar')
+		if plant_name
+			div(class="successSearch") #{locals.plant_name}
+		else if state
+			div(class="successSearch") #{locals.state}
+		else if initial
+			div(class="successSearch") Welcome! Enter search term here.
+		else
+			div(class="failSearch") Placeholder No Result Text
+			
 		form(id='searchContainer', action='', method='get')
 			if plant_name
 				input(type='text', id='search', name='plantSearch', placeholder=plant_name)
 			else
 				input(type='text', id='search', name='plantSearch', placeholder='Search for a plant...')
-		
-		if plant_name
-			| #{locals.plant_name}
-		else if state
-			| #{locals.state}
-		else
-			| "Nothing received..."
+			
+		div(id='plantsList')
+			ul
+				if plant_names.length
+					each plant_name in plant_names
+						a(href='/?plantSearch='+plant_name)
+							li= plant_name
+				else
+					li No results found
 	div(id="map-wrapper")
 		div(id="map")
