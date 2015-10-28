@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.9.29)  27 OCT 2015 20:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.13)  27 OCT 2015 22:42
 entering extended mode
 **Group6_Phase2.tex
 (Group6_Phase2.tex
@@ -311,18 +311,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
-<Website_Screenshot.png, id=15, 1443.14156pt x 733.99219pt>
+<Website_Screenshot.png, id=15, 1204.5pt x 599.23875pt>
 File: Website_Screenshot.png Graphic file (type png)
 
 <use Website_Screenshot.png>
 Package pdftex.def Info: Website_Screenshot.png used on input line 193.
-(pdftex.def)             Requested size: 245.33081pt x 124.77701pt.
-
-Overfull \hbox (5.33081pt too wide) in paragraph at lines 193--194
- [][] 
- []
-
-[2 <./Website_Screenshot.png>]
+(pdftex.def)             Requested size: 204.76228pt x 101.86923pt.
+ [2 <./Website_Screenshot.png>]
 Overfull \hbox (1.5022pt too wide) in paragraph at lines 224--225
 []\T1/aer/m/n/9 Set up the database on a lo-cal server us-ing MySQL
  []
@@ -330,12 +325,12 @@ Overfull \hbox (1.5022pt too wide) in paragraph at lines 224--225
 [3] (Group6_Phase2.aux) ) 
 Here is how much of TeX's memory you used:
  2436 strings out of 493698
- 28794 string characters out of 3144415
+ 28794 string characters out of 3144412
  92470 words of memory out of 3000000
  5728 multiletter control sequences out of 15000+200000
  45910 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,10n,28p,936b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,10n,28p,1060b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/
 8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program
@@ -344,9 +339,9 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
 /helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Group6_Phase2.pdf (3 pages, 608869 bytes).
+Output written on Group6_Phase2.pdf (3 pages, 375987 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
+ 51 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
