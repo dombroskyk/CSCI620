@@ -197,6 +197,7 @@ Ultimately, there will be (on the left hand side of the website right below the 
 In order for the website and database to communicate, the database will be setup on a Node.js server. This will allow the website to request information from the local database, which is set up using MySQL Server. In order for the user interface(UI) to change based on users requests, this is how the information will be transmitted from the database to the website. 
 
 \subsection{Data Analyses}
+The data analyses will all happen through the website visualization. A user will be able to either select a state or a plant in order to find information from the database. If a state is selected, then, on the left hand side of the website, a list of plants that can be found in this location will appear. The other option is using the search bar to find a plant. This will actually use substring searching, so as you are searching a list of possible plants will appear, and the location will be highlighted. This works the same for searching a specific plant name. The locations in which the plant can be located will become highlighted on the screen. This is a simple way to take the information found in the data set and portray it in an easy to read and easy to see way for any user. Now, a user can find a list of plants that grow in their location, or find out if a plant in a specific location can be found. 
 
 \subsection{Resources}
 There are many different resources being used in order to develop the project. These include certain files, softwares, and online databases all assisting in the creation of the website and database. As it was already covered, the database is being set up as a MySQL database running on a local server set up using MySQL Server, the application will be a website visualization that is coded using Jade and CSS, and the database and website will communicate with a Node.js server. 
@@ -252,6 +253,19 @@ The group has already made some progress towards finishing the project. This inc
 		\item plant\_to\_state\_data.text
 	\end{itemize}
 \end{description}
+
+
+\section{Citations}
+\begin{itemize}
+	\item Relevant Papers
+	\begin{itemize}	
+		\item Hämäläinen, W. and Nykänen, M.: Efficient discovery of statistically significant association rules. Proceedings of the 8th IEEE International Conference on Data Mining (ICDM 2008), pp. 203-212. IEEE Computer Society 2008. 			
+	\end{itemize}		
+	\item Dataset
+		\begin{itemize}		
+			\item USDA, NRCS. 2008. The PLANTS Database ([Web Link], 31 December 2008). National Plant Data Center, Baton Rouge, LA 70874-4490 USA.
+		\end{itemize}	
+\end{itemize}
 
 
 \end{document}  % This is where a 'short' article might terminate
