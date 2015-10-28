@@ -1,9 +1,9 @@
 module.exports = {
 	MYSQL: {
-		HOST: '',
+		HOST: 'localhost',
 		PORT: 3306,
-		USER: '',
+		USER: 'root',
 		PASS: '',
-		DATABASE: ''
+		DATABASE: 'group6_plantfinder'
 	}
 }
