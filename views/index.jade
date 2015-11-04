@@ -77,12 +77,12 @@ block content
 			if plant_names.length
 				div(class="successSearch") #{locals.plant_name}
 			else
-				div(class="failSearch") No results for: #{locals.plant_name}
+				div(class="failSearch") No results for: #{locals.plant_name}.
 		else if state
 			if plant_names.length
 				div(class="successSearch") #{locals.state}
 			else
-				div(class="failSearch") No results for: #{locals.state}
+				div(class="failSearch") No results for: #{locals.state}.
 		else if initial
 			div(class="successSearch") Welcome! Enter search term here.
 		else
@@ -98,7 +98,7 @@ block content
 			ul
 				if plant_names.length
 					each plant_name in plant_names
-						a(href='/?plantSearch='+plant_name)
+						a(href='/?exact=true&plantSearch='+plant_name)
 							li= plant_name
 				else
 					li No results found
