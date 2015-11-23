@@ -50,7 +50,7 @@ html, body {
 .successSearch, .failSearch {
 	width: calc(100% - 2em);
 	padding: .2em;
-	height: 1em;
+	/*height: 1em;*/
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 5px;

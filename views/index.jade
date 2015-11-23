@@ -75,18 +75,18 @@ block content
 	div(id='sidebar')
 		if plant_name
 			if plant_names.length
-				div(class="successSearch") #{locals.plant_name}
+				div(class="successSearch") #{locals.plant_name} - #[a(href="/") Start Over]
 			else
-				div(class="failSearch") No results for: #{locals.plant_name}.
+				div(class="failSearch") No results for: #{locals.plant_name}. #[a(href="/") Start Over]
 		else if state
 			if plant_names.length
-				div(class="successSearch") #{locals.state}
+				div(class="successSearch") #{locals.state} - #[a(href="/") Start Over]
 			else
-				div(class="failSearch") No results for: #{locals.state}.
+				div(class="failSearch") No results for: #{locals.state}. #[a(href="/") Start Over]
 		else if initial
 			div(class="successSearch") Welcome! Enter search term here.
 		else
-			div(class="failSearch") Something went wrong...
+			div(class="failSearch") Something went wrong... #[a(href="/") Start Over]
 			
 		form(id='searchContainer', action='', method='get')
 			if plant_name

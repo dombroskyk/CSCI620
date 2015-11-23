@@ -6,7 +6,9 @@ block content
 		
 		h2 About
 		p
-			| Plant Finder is a website created by Kevin Dombrosky and Brittany Purcell for Rochester Institute of Technology's CSCI-620 Intro to Big Data class. The site's intended use is to be able to search for plants using all or part of their scientific names and to receive a list of locations where the plant can be found. These locations are limited to the states of the United States and the provinces of Canada. Similarly, a user can click on a state to receive a list of plants in that state. The data was received from the UCI Machine Learning Repository in the Plants dataset (
+			| Plant Finder is a website created by Kevin Dombrosky and Brittany Purcell for Rochester Institute of Technology's CSCI-620 Introduction to Big Data class. The site's intended use is to be able to search for plants using all or part of their scientific names and to receive a list of locations where the plant can be found. These locations are limited to the states of the United States and the provinces of Canada. If a string is searched from the searchbar, all plant names matching that substring will be returned, and the union of each plant's set of states will be shown. Similarly, a user can click on a state to receive a list of plants in that state. Finally, if a user clicks on a plant name in the sidebar, it will search for that plant only and return its locations.
+		p
+			| The data was received from the UCI Machine Learning Repository in the Plants dataset (
 			a(href='http://archive.ics.uci.edu/ml/datasets/Plants') http://archive.ics.uci.edu/ml/datasets/Plants
 			| ). The UCI dataset originated from the United States Department of Agriculture's Plant dataset(
 			a(href='http://plants.usda.gov/index.html') http://plants.usda.gov/index.html
@@ -14,4 +16,12 @@ block content
 		
 		h2 Dependencies
 		p
-			| TODO
+			ul
+				li #[a(href="https://nodejs.org/en/") Node.js]
+				li #[a(href="https://www.npmjs.com/package/express") npm - express]
+				li #[a(href="https://www.npmjs.com/package/debug") npm - debug]
+				li #[a(href="https://www.npmjs.com/package/jade") npm - jade]
+				li #[a(href="https://www.npmjs.com/package/mysql") npm - mysql]
+				li #[a(href="https://www.npmjs.com/package/nodemon") npm - nodemon]
+				li #[a(href="https://www.mysql.com/") MySQL]
+		

@@ -3,7 +3,6 @@
 var https = require('https'),
     mysql = require('mysql'),
     config = require('../config');
-    //abbrMap = require('../includes/abbrMap');
 
 module.exports = {
 
@@ -26,6 +25,7 @@ module.exports = {
             }
         });
         
+        //use objects for O(1) checking/fetching, and make our lives easier later on
         var usa_val_names = {"Alabama":{},"Alaska":{},"Arizona":{},"Arkansas":{},"California":{},"Colorado":{},"Connecticut":{},"Delaware":{},"Florida":{},"Georgia":{},"Hawaii":{},"Idaho":{},
 							"Illinois":{},"Indiana":{},"Iowa":{},"Kansas":{},"Kentucky":{},"Louisiana":{},"Maine":{},"Maryland":{},"Massachusetts":{},"Michigan":{},"Minnesota":{},"Mississippi":{},
 							"Missouri":{},"Montana":{},"Nebraska":{},"Nevada":{},"New Hampshire":{},"New Jersey":{},"New Mexico":{},"New York":{},"North Carolina":{},"North Dakota":{},
@@ -36,10 +36,6 @@ module.exports = {
         //plant/state query to db
         //if someone tries to be smart and input both params, we prefer plant
         //connection.escape(value) to avoid SQL injection
-        //alternatively (preferred) 
-        //connection.query('SELECT * FROM users WHERE id = ?', [userId], function(err, results) {
-            // ... 
-        //});
         if( plant_name ){
             var sql_query = '';
             if( exact ){
@@ -104,7 +100,7 @@ module.exports = {
                         }
                     }
                 }
-                //there needs to be a better way to do this
+                
                 res.render('index',
                     {
                         plant_name: plant_name,
@@ -143,8 +139,6 @@ module.exports = {
                                     'on plant_to_state.idState = state.idState';
             }
             //query state name
-            //why do i have to concatenate strings to get this to work
-            //WHY JAVASCRIPT, I JUST WANT NICELY FORMATTED SQL
             //load it as an external file eventually?
             mysql_connection.query( sql_query, [state], function(err, rows, fields){
                 if( err ) console.log( err );
@@ -203,7 +197,7 @@ module.exports = {
             });
         }else{
             mysql_connection.query('SELECT plant_name FROM plant', function(err, rows, fields){
-                if( err ) console.log(err); //should find more elegant way to handle these
+                if( err ) console.log(err);
                 
                 var plant_names = [],
                     usa_active = [],
