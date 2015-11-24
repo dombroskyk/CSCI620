@@ -12,6 +12,7 @@ nodemon({
     ext: 'js json'
 });
 
+//nodemon commands
 nodemon.on('start', function () {
     log('App has started');
 }).on('quit', function () {

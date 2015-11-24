@@ -1,11 +1,14 @@
 'use strict';
 
+//main controller
+//load node packages
 var https = require('https'),
     mysql = require('mysql'),
     config = require('../config');
 
 module.exports = {
 
+    //main handler
     home: function (req, res) {
         var plant_name = req.query.plantSearch,
             state = req.query.stateSearch,
@@ -39,6 +42,7 @@ module.exports = {
         if( plant_name ){
             var sql_query = '';
             if( exact ){
+                //exact string search
                 sql_query = 'select p.plant_name, group_concat( s.state_name ) as states from plant as p ' +
 	                                       'inner join plant_to_state as ps ' +
 		                                      'on p.idPlant = ps.idPlant ' +
@@ -47,6 +51,7 @@ module.exports = {
 	                                       'where p.plant_name like ' + mysql_connection.escape( plant_name ) +
                                            ' group by p.plant_name'
             }else{
+                //substring search
                 sql_query = 'select p.plant_name, group_concat( s.state_name ) as states from plant as p ' +
 	                                       'inner join plant_to_state as ps ' +
 		                                      'on p.idPlant = ps.idPlant ' +
@@ -54,7 +59,6 @@ module.exports = {
 		                                      'on ps.idState = s.idState ' +
 	                                       'where p.plant_name like ' + mysql_connection.escape('%' + plant_name + '%') +
                                            ' group by p.plant_name'
-                //query plant name
             }
             mysql_connection.query(sql_query, function(err, rows, fields){
 
@@ -64,6 +68,7 @@ module.exports = {
                     usa_inactive = [],
                     can_inactive = [];
 
+                //mark states as seen, push to active arrays
                 for( var i = 0; i < rows.length; i++ ){
                     plant_names.push( rows[i].plant_name );
                     rows[i].states = rows[i].states.split(",");
@@ -77,6 +82,7 @@ module.exports = {
                         }else if( rows[i].states[j] in can_val_names ){
                             if( !( "seen" in can_val_names[rows[i].states[j]] ) ){
                                 can_val_names[rows[i].states[j]]["seen"] = true;
+                                //handle Newfoundland/Labrador
                                 if( rows[i].states[j] == "Labrador" || rows[i].states[j] == "Newfoundland" ){
                                     can_active.push( "Newfoundland and Labrador" );
                                 }else{
@@ -86,6 +92,7 @@ module.exports = {
                         }
                     }
                 }
+                //handle states that weren't seen in the search
                 for( var name in usa_val_names ){
                     if( !( "seen" in usa_val_names[name] ) ){
                         usa_inactive.push( name );
@@ -122,7 +129,9 @@ module.exports = {
                 }
             });
         }else if( state ){
+            //state search
             var sql_query = '';
+            //handle newfoundland/labrador case
             if( state.toLowerCase() == "newfoundland and labrador" ){
                 sql_query = 'select p.plant_name from plant as p ' + 
 	                            'inner join plant_to_state ' +
@@ -139,7 +148,6 @@ module.exports = {
                                     'on plant_to_state.idState = state.idState';
             }
             //query state name
-            //load it as an external file eventually?
             mysql_connection.query( sql_query, [state], function(err, rows, fields){
                 if( err ) console.log( err );
                 var usa_active = [],
@@ -148,11 +156,12 @@ module.exports = {
                     can_inactive = [],
                     plant_names = [];
                     
-                
+                //build plants array
                 for( var i = 0; i < rows.length; i++ ){
                     plant_names.push( rows[i].plant_name );
                 }
                     
+                //handle US active/inactive states
                 for( var name in usa_val_names ){
                     if( name == state ){
                         usa_active.push( name );
@@ -161,6 +170,7 @@ module.exports = {
                     }
                 }
                 
+                //handle CA active/inactive states, including newfoundland/labrador case
                 for( var name in can_val_names ){
                     if( name == state ){
                         can_active.push( name );
@@ -196,18 +206,22 @@ module.exports = {
                 }
             });
         }else{
+            //general case, get all plant names
             mysql_connection.query('SELECT plant_name FROM plant', function(err, rows, fields){
                 if( err ) console.log(err);
                 
                 var plant_names = [],
                     usa_active = [],
                     can_active = [];
+                //build plants array
                 for( var i = 0; i < rows.length; i++ ){
                     plant_names.push( rows[i].plant_name );
                 }
+                //build US states
                 for( var usa_val in usa_val_names ){
                     usa_active.push( usa_val );
                 }
+                //build CAN states
                 for( var can_val in can_val_names ){
                     if( can_val == "Newfoundland" || can_val == "Labrador" ){
                         can_active.push( "Newfoundland and Labrador");

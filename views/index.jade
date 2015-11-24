@@ -56,7 +56,7 @@ block scripts
 				
 				var usa_feature_layer = new FeatureLayer("http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StateCityHighway_USA/MapServer/1");
 				var can_feature_layer = new FeatureLayer("https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/mapoverlays_political/MapServer/4");
-				//print names to the browser console when we click on the region
+				//assign on click search
 				can_feature_layer.on('click', function(e){
 					window.location.href = '/?stateSearch=' + e.graphic.attributes.NAME;
 				});
