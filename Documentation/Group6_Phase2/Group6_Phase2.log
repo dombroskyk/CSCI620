@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.13)  27 OCT 2015 22:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.9.29)  8 DEC 2015 14:20
 entering extended mode
 **Group6_Phase2.tex
 (Group6_Phase2.tex
@@ -229,7 +229,8 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 116.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 128--130
+Overfull \hbox (2.9955pt too wide) in paragraph at lines 124--125
+\T1/aer/m/n/9 Rochester In-sti-tute of Tech-nol-ogy was a semester long project
 
  []
 
@@ -261,87 +262,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--130
 
 Underfull \hbox (badness 10000) in paragraph at lines 128--130
 
+ []
+
+
+Overfull \hbox (54.28445pt too wide) in paragraph at lines 134--135
+\T1/aer/m/n/9 from the UCI Ma-chine Learn-ing Repos-i-tory (http://archive.ics.
+uci.edu/ml 
  []
 
 <FinalProject_ERdiagram.png, id=1, 465.74pt x 247.92625pt>
 File: FinalProject_ERdiagram.png Graphic file (type png)
 
 <use FinalProject_ERdiagram.png>
-Package pdftex.def Info: FinalProject_ERdiagram.png used on input line 138.
+Package pdftex.def Info: FinalProject_ERdiagram.png used on input line 140.
 (pdftex.def)             Requested size: 232.86943pt x 123.96281pt.
 
-<original_database_file.png, id=3, 515.67656pt x 268.75406pt>
-File: original_database_file.png Graphic file (type png)
-
-<use original_database_file.png>
-Package pdftex.def Info: original_database_file.png used on input line 144.
-(pdftex.def)             Requested size: 206.26697pt x 107.49971pt.
- [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
- <./FinalProject_ERdiagram.png> <./original_database_file.png>]
-Overfull \hbox (1.78961pt too wide) in paragraph at lines 177--178
-\T1/aer/m/n/9 tions that are used. (http://archive.ics.uci.edu/ml 
+Overfull \hbox (4.98238pt too wide) in paragraph at lines 146--147
+\T1/aer/m/n/9 from the dataset. These were Green-land/Denmark, St. Pierre
  []
 
-
-Overfull \hbox (7.56761pt too wide) in paragraph at lines 177--178
-\T1/aer/m/n/9 /machine-learning-databases/plants/stateabbr.txt)
- []
-
-LaTeX Font Info:    Try loading font information for OML+aer on input line 179.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\ae\omlaer.fd"
-File: omlaer.fd 1999/12/27
-)
-LaTeX Font Info:    Font shape `OML/aer/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 179.
-
-Overfull \hbox (3.31099pt too wide) in paragraph at lines 179--180
-\T1/aer/m/n/9 times (one for each ta-ble that needed to be loaded). 
- []
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-Overfull \hbox (2.25539pt too wide) in paragraph at lines 179--180
-\T1/aer/m/n/9 LOAD DATA LO-CAL IN-FILE 'file-lo-ca-tion' INTO
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-
- []
-
-<Website_Screenshot.png, id=15, 1204.5pt x 599.23875pt>
+ <./FinalProject_ERdiagram.png>] <Website_Screenshot.png, id=14, 1443.14156pt x
+ 733.99219pt>
 File: Website_Screenshot.png Graphic file (type png)
 
 <use Website_Screenshot.png>
-Package pdftex.def Info: Website_Screenshot.png used on input line 193.
-(pdftex.def)             Requested size: 204.76228pt x 101.86923pt.
- [2 <./Website_Screenshot.png>]
-Overfull \hbox (1.5022pt too wide) in paragraph at lines 224--225
-[]\T1/aer/m/n/9 Set up the database on a lo-cal server us-ing MySQL
+Package pdftex.def Info: Website_Screenshot.png used on input line 156.
+(pdftex.def)             Requested size: 245.33081pt x 124.77701pt.
+
+Overfull \hbox (5.33081pt too wide) in paragraph at lines 156--157
+ [][] 
  []
 
-[3] (Group6_Phase2.aux) ) 
+<finalScreenshot.jpg, id=15, 1927.2pt x 981.6675pt>
+File: finalScreenshot.jpg Graphic file (type jpg)
+ <use finalScreenshot.jpg>
+Package pdftex.def Info: finalScreenshot.jpg used on input line 165.
+(pdftex.def)             Requested size: 231.25403pt x 117.79501pt.
+
+[2 <./Website_Screenshot.png> <./finalScreenshot.jpg>] [3
+
+] (Group6_Phase2.aux) ) 
 Here is how much of TeX's memory you used:
- 2436 strings out of 493698
- 28794 string characters out of 3144412
- 92470 words of memory out of 3000000
- 5728 multiletter control sequences out of 15000+200000
+ 2421 strings out of 493698
+ 28506 string characters out of 3144415
+ 89470 words of memory out of 3000000
+ 5715 multiletter control sequences out of 15000+200000
  45910 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,10n,28p,1060b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/
-8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
-/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Group6_Phase2.pdf (3 pages, 375987 bytes).
+ 41i,10n,28p,854b,252s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r
+.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
+utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Group6_Phase2.pdf (3 pages, 731659 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
+ 46 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
