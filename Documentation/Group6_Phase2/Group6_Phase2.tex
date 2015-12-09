@@ -123,7 +123,7 @@ This paper discusses the group project for Group 6 in the Intro to Big Data clas
 \section{Introduction}
 The group project for CSCI-620, Intro to Big Data at Rochester Institute of Technology was a semester long project where members of the group had to take a dataset, and create a way to organize and understand the dataset. The project was meant to expand the members knowledge and understanding of handling large datasets, as well as create a way for others to analyze the data.
 
-Of the two requirements for the project, which include a database management system (DBMS), and having some form of database analytic. The members used the the Plants dataset from the UCI Machine Learning Repository which contained information on the growth location and scientific names of plants in North America. The data was then put into a relational database, MySQL. 
+There were two requirements that the team needed to meet for the project. These were creating a database management system (DBMS) and having some form of database analytic for the system. The members used the the Plants dataset from the UCI Machine Learning Repository which contained information on the growth location and scientific names of plants in North America. The data was then put into a relational database using  MySQL. 
 
 For the analytic the team decided on a visual representation using a webpage that displayed a map of the United States and Canada. The user can then either search for a plant name, or select a region on the map, and the results of the dataset would become available. There will be more specifics on the visualization later in the paper.  
 \\\\\\\\\\\\
@@ -131,7 +131,7 @@ For the analytic the team decided on a visual representation using a webpage tha
 \section{Body}
 
 \subsection{Database}
- As a reminder, the dataset being used is the Plants dataset from the UCI Machine Learning Repository (http://archive.ics.uci.edu/ml \\* /datasets/Plants), and was set up in a MySQL database. In order to add all of the data into a MySQL, a Java script was created. The script ran through the dataset and added the elements into MySQL. 
+ As a reminder, the dataset being used is the Plants dataset from the UCI Machine Learning Repository (http://archive.ics.uci.edu/ml \\* /datasets/Plants), and was set up in a MySQL database. In order to add all of the data into the database, a Java script was created. The script ran through the dataset and added the elements into MySQL. 
  
  The information found in the database consists of a plant and its location in the United States/Canada. Below is the Entity-relationship(ER) diagram which was developed by Group 6. This diagram is the basis for how the information from the dataset was stored in the database.
 
@@ -141,7 +141,7 @@ For the analytic the team decided on a visual representation using a webpage tha
 	\caption{The ER diagram which represents the organization of the data in the database.}
 \end{figure}
 
-Later, when the visual needs to access the information in the dataset, this allows for proper organization so the appropriate calls can be made. There are three tables within the database. The first holds the information on the plants. The consists of the plant ID, as well as the name of the plant associated with that ID. The locations table is very similar. The location table has the location ID and the associated location. Lastly, there is a table which compares the locations and plants. This table is maps the plant-id to a location-id. This is how the location and plant information can be accessed using the appropriate calls, and will be simple to display in the visual.
+Later, when the visual needs to access the information in the dataset, this allows for proper organization so the appropriate calls can be made. There are three tables within the database. The first holds the information on the plants. This consists of the plant ID, as well as the name of the plant associated with that ID. The locations table is very similar. The location table has the location ID and the associated location. Lastly, there is a table which maps the plant-id to a location-id. This is how the location and plant information can be accessed using the appropriate calls, and will be simple to display in the visual.
 
 There are a few specific sets of data which were excluded from the dataset. These were Greenland/Denmark, St. Pierre and Miquelon, and Prince Edward Island. The reason the members excluded these locations is because the map only looked at The United States and Canada. These regions were outside the scope of the map, and therefore were outside the scope of the project. 
 
@@ -158,7 +158,7 @@ The visualization also has the ability to search by plant name. The search does 
 \end{figure}
 
 
-This application is a web page that was written in Jade Markup Language with CSS. This is the language that is most familiar to the group, after one of the members worked with the language all summer on an independent project. The basic blueprint for the web page can be seen (Figure 2), and in Figure 3 is the final result of the webpage.
+This application is a web page that was written in Jade Markup Language with CSS. This is the language that is most familiar to the group, after one of the members worked with the language all summer on an independent project. The basic blueprint for the web page can be seen in Figure 2, and in Figure 3 is the final result of the webpage.
 
 \begin{figure}[htb]
 	\centering
@@ -168,15 +168,14 @@ This application is a web page that was written in Jade Markup Language with CSS
 
 
 \subsection{Communication}
-In order to allow communication between the webpage and the database, the data needed to be uploaded to a server. The members used a Node.js server, and using the Jade Markup Language with CSS the group could make calls to the server requesting data. The data is then transmitted to the webpage, and the results are displayed on the webpage. 
+In order to allow communication between the webpage and the database, the data needed to be uploaded to a server. The members used a Node.js server, and using Javascript  the group could make calls to the server requesting data. The data is then transmitted to the webpage, and the results are displayed on the webpage. 
 
-In order to make the communication work the group used a MySQL package that would allow for communication. In order to secure and protect this information a protect SQL injection with the escape command was used.
+In order to make the communication work the group used a MySQL package that would allow for communication. In order to secure and protect the database against a SQL injection attack, the group used a function from the MySQL package that escaped important characters in any user input.
 
-There are a few areas where the group had to create slight workarounds in order to get the information to display nicely. There was a schema name change part of the way through the project in order to make the information easier to access. Also, there was a slight problem with Newfoundland and Labrador. These locations were seperate in the database, but are the same place on the map. In order to compensate for this and display the information correctly, at runtime if the database requests information for the location, it will pull the information from both Newfoundland and Labrador and combine the results. These results will then be displayed at one place. This is the same if a plants location is either Labrador or Newfoundland. Either way, if one or both, the location would be marked as an available place for the plant. 
+There are a few areas where the group had to create slight workarounds in order to get the information to display nicely. There was a schema name change part of the way through the project in order to make the information easier to access. Also, there was a slight problem with Newfoundland and Labrador. These locations were separate in the database, but are the same place on the map. In order to compensate for this and display the information correctly, at runtime if the database requests information for the location, it will pull the information from both Newfoundland and Labrador and combine the results. These results will then be displayed at one place. This is the same if a plant's location is either Labrador or Newfoundland. Either way, if one or both locations are listed, it will mark that spot on the map. 
 
 \subsection{Resources}
-There were many resources that were used in order to develop and complete the project. These include certain files, softwares, and online databases. 
-The database was set up using a MySQL database, and the visualization is coded using Jade and CSS. THe database and webpage communicate using a Node.js Server. The communication is protected and available because of MySQL packages and protected SQL injections.
+There were many resources that were used in order to develop and complete the project. These include certain files, softwares, and online databases. The database was set up using a MySQL database, and the visualization is coded using Jade and CSS. The database and webpage communicate using a Node.js Server. The communication is protected and available because of MySQL packages and protects against SQL injections.
 
 The code and files are all being stored using GitHub which is accessible by all of the members of the group. GitHub is a repository to store, download, and change the existing code. The code itself was written using many different platforms. Some members used Notepad++, while others are using Visual Studio Code. Any changes to files or code needed to be pushed to the repository.
 
@@ -186,9 +185,9 @@ The README will be provided to establish step-by-step instructions on downloadin
 
 
 \section{Conclusions}
-The group has successfully created a working webpage visualization which will allow analysis on a large dataset of plant information. They designed and implemented a worker database set up on a usable and accessible server. Information has been moved, copied, and rearranged to create the database, and the visualization has been adapted to work with the data.
+The group has successfully created a working webpage visualization which will allow analysis on a large dataset of plant information. They designed and implemented a database set up on a usable and accessible server. Information has been moved, copied, and rearranged to create the database, and the visualization has been adapted to work with the data.
 
-Below is a list of all of the different elements that needed to be accomplished in order to create the final project. There is also a simple list of the resources that were used by the group to make the project possible. Many of these recourses were mentioned previously in the paper, but this is a full list of them. Lastly, is all of the necessary files and folders that should be available in the zip folder. These are important for the explanation of the project, the README describing the process needed to set everything up, and this document.
+Below is a list of all of the different elements that needed to be accomplished in order to create the final project. There is also a simple list of the resources that were used by the group to make the project possible. Many of these resources were mentioned previously in the paper, but this is a full list of them. Lastly, is all of the necessary files and folders that should be available in the zip folder. These are important for the explanation of the project, the README describing the process needed to set everything up, and this document.
 
 \begin{description}
 	\item[Work Done:] \hfill
@@ -211,6 +210,7 @@ Below is a list of all of the different elements that needed to be accomplished 
 		\item Node.js
 		\item Notepad++
 		\item Visual Studio Code
+		\item Javascript
 	\end{itemize}
 	
 	\item[Files] \hfill
