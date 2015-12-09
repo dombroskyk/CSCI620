@@ -18,6 +18,7 @@ Dependencies
 ------------
 Node.js (https://nodejs.org/en/)
 MySQL (https://www.mysql.com/)
+ArcGIS (https://developers.arcgis.com/javascript/)
 
 Sub-modules
 -----------
@@ -38,7 +39,7 @@ Setup MySQL and MySQL Server:
 and click "No thanks, just start my download."
 3) Run the downloaded installer, mysql-installer-web-community-5.7.9.0.msi
 It is recommended to install all products included (especially MySQL Server and
-MySQL Workbench) to ensure everything is required included
+MySQL Workbench) to ensure everything required is included
 4) Open MySQL Workbench
 5) Make sure you are in the home tab, and create a new database connection by
 clicking the wrench icon next to "MySQL Connections" and click "New"
@@ -47,7 +48,7 @@ clicking the wrench icon next to "MySQL Connections" and click "New"
 7) Click "Test Connection" and enter a password for the root user on the
 MySQL server. (This can be anything)
 8) Connect to the server by double clicking on the connection you just created
-9) Open the supplied sql file, ./Documentation/DatabaseLoadFiles/sql_setu.sql
+9) Open the supplied sql file, ./Documentation/DatabaseLoadFiles/sql_setup.sql
 10) Correct the last three lines (load data local ...) so that the paths
 in the commands reflect the absolute paths to your text files
 11) Run sql_setup.sql
